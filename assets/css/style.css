@@ -1,0 +1,32 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body, html {
+	height: 100%;
+}
+.flex-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center; 
+	justify-content: center;
+	padding: 50px;
+}
+.flex-container .flex-item{
+
+}
+.header{
+	background-color: green;
+
+}
+img{
+	padding: 10px;
+	width: 150px;
+	height: 150px;
+}
+/*h1{
+	margin-bottom: 20px;
+}
+select{
+	margin-top: 10px;
+}*/
