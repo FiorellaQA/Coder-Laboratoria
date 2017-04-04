@@ -49,15 +49,19 @@ sextaProm_lima.push(createImage("assets/img/6-lima/michellemore.jpg", "Michelle 
 sextaProm_lima.push(createImage("assets/img/6-lima/mishelvelasquez.jpg", "Mishel Velasquez"));
 sextaProm_lima.push(createImage("assets/img/6-lima/rosariofelix.jpg", "Rosario Felix"));
 
-for(var i = 0; i<cuartaProm_chile.length; i++){
-	document.getElementById("imagenes").appendChild(cuartaProm_chile[i]);
+function printAll(){
+	for(var i = 0; i<cuartaProm_chile.length; i++){
+		document.getElementById("imagenes").appendChild(cuartaProm_chile[i]);
+	}
+	for(var i = 0; i<quintaProm_lima.length; i++){
+		document.getElementById("imagenes").appendChild(quintaProm_lima[i]);
+	}
+	for(var i = 0; i<sextaProm_lima.length; i++){
+		document.getElementById("imagenes").appendChild(sextaProm_lima[i]);
+	}
 }
-for(var i = 0; i<quintaProm_lima.length; i++){
-	document.getElementById("imagenes").appendChild(quintaProm_lima[i]);
-}
-for(var i = 0; i<sextaProm_lima.length; i++){
-	document.getElementById("imagenes").appendChild(sextaProm_lima[i]);
-}
+printAll();
+
 
 document.getElementById("select").addEventListener("change",function(){
 	document.getElementById("imagenes").innerHTML = "";
@@ -65,12 +69,6 @@ document.getElementById("select").addEventListener("change",function(){
 	switch(this.value) {
     	case "cuartaChile":
         	for(var i = 0; i<cuartaProm_chile.length; i++){
-
-    //     		var newDiv = document.createElement("div");
-				// var newText = document.createElement("textArea");
-    //     		newDiv.appendChild(newText);
-				// newDiv.appendChild(cuartaProm_chile[i]);
-				
 				document.getElementById("imagenes").appendChild(cuartaProm_chile[i]);	
 			}
         	break;
@@ -84,5 +82,8 @@ document.getElementById("select").addEventListener("change",function(){
 				document.getElementById("imagenes").appendChild(sextaProm_lima[i]);
 			}
         	break;
+        default:
+        	printAll();
+
 	}
 });
